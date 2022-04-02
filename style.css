@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: chocolate;
+}
+
+h1 {
+    font-size: 50px;
+    color:aqua;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.winnercount {
+    position: absolute;
+    top:10px;
+    background-color: darkgreen;
+    object-fit: contain;
+    color: chocolate;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.winnercount div {
+    display: flex;
+}
+
+.winnercount p {
+    display: flex;
+    margin-right: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+tr {
+    width: 400px;
+}
+
+td {
+    border: solid 5px black;
+    width: 133px;
+    height: 133px;
+    position: relative;
+}
+
+td:hover {
+    background-color: burlywood;
+}
+
+/*KOMMENTARE*/
+.d-none {
+    display: none;
+}
+
+
+.tablerelative {
+    position: relative;
+}
+
+.player-panel {
+    display: flex;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.player-panel div {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: 16px;
+    background-color: darkgray;
+}
+
+.player-panel img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}
+
+
+.player-inactive {
+    opacity: 0.5;
+}
+
+.shape {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 26px;
+    top: 26px;
+}
+
+.horizontal-line {
+    background-color: pink;
+    height: 10px;
+    width: 400px;
+    position: absolute;
+}
+
+.make-vertical {
+    transform: rotate(90deg);
+
+}
+
+.make-diagonal {
+    background-color: black;
+    height: 10px;
+}
+
+.restart-btn {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #1C0B7F;
+    z-index: 3;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 60px;
+}
+
+.restart-btn:hover {
+    background-color: rgb(59, 40, 168);
+}
+
+.game-over {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 2;
+}
+
+@media (max-width:1000px) {
+    .hide-winnerbox {
+        display: none;
+    }
+}
