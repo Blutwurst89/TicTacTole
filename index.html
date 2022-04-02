@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Tic Tac Toe</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="timer()">
+    
     <h1>TicTacTole</h1>
     <div id="winnercountBox" class="winnercount">
         <h2>Winner's Count</h2>
@@ -27,6 +29,8 @@
         </div>
     </div>
 
+        <div class="timer"> This Game is over in <span id="time">02:00</span> minutes!</div>
+  
     <button id="restart-btn" class="restart-btn d-none" onclick="restart()">Restart</button>
     <img class="game-over d-none" id="game-over" src="img/game-over.png">
     <img class="game-over d-none" id="shrug" src="/img/shrug.png">

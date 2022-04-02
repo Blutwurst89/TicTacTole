@@ -4,6 +4,29 @@ let gameOver = false;
 let winnerCountCircle = 0;
 let winnerCountCross = 0;
 
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+function timer() {
+    var twoMinutes = 60 * 2,
+        display = document.querySelector('#time');
+    startTimer(twoMinutes, display);
+};
+
 function fillShape(id) {
     if (!fields[id] && !gameOver) {
         if (currentShape == 'cross') {
@@ -93,7 +116,8 @@ function checkForWin() {
             document.getElementById('game-over').classList.remove('d-none');
             document.getElementById('restart-btn').classList.remove('d-none');
             document.getElementById('winnercountBox').classList.add('d-none');
-        }, 1500);} 
+        }, 1500);
+    }
 
     let winnerCross
     if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0] && fields[0] == 'cross') {
@@ -152,9 +176,10 @@ function checkForWin() {
             document.getElementById('game-over').classList.remove('d-none');
             document.getElementById('restart-btn').classList.remove('d-none');
             document.getElementById('winnercountBox').classList.add('d-none');
-        }, 1500);}
-    
-    
+        }, 1500);
+    }
+
+
     else {
         if (fields[0] && fields[1] && fields[2] && fields[3] && fields[4] && fields[5] && fields[6] && fields[7] && fields[8]) {
             gameOver = true;
@@ -182,5 +207,7 @@ function restart() {
     for (let i = 0; i < 9; i++) {
         document.getElementById('circle-' + i).classList.add('d-none');
         document.getElementById('cross-' + i).classList.add('d-none');
+        window.location.reload();
     }
 }
+
